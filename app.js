@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const tasks = require('./routes/tasks');
+const errorHandler = require('./middleware/not-found');
 
 // Port Number
 const port = 8000;
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // middle ware 
 app.use('/api/v1/tasks',tasks);
+app.use(errorHandler);
 
 // Connect to our database
 const start = async () => {
