@@ -7,6 +7,10 @@ const tasks = require('./routes/tasks');
 // Port Number
 const port = 8000;
 
+// ✅ Middleware to parse JSON
+app.use(express.json());
+
+
 // middle ware 
 app.use('/api/v1/tasks',tasks);
 
